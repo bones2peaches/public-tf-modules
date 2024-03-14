@@ -1,13 +1,13 @@
 resource "aws_ecs_task_definition" "this" {
-  depends_on = [ aws_iam_role.exc_task.arn , ws_iam_role.exc_role.arn  , aws_cloudwatch_log_group.this ]
+  depends_on = [ aws_cloudwatch_log_group.this ]
   family                   = "${var.project}-${var.env}-api-task-family"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = var.cpu
   memory = var.memory
 
-  task_role_arn      = aws_iam_role.exc_task.arn
-  execution_role_arn = aws_iam_role.exc_role.arn
+  task_role_arn      = var.task_role_arn
+  execution_role_arn = var.exec_role_arn
 
   container_definitions = jsonencode([
     {
