@@ -26,3 +26,7 @@ output "secret_arn" {
 output "kms_arn" {
   value = aws_kms_key.postgres_kms.arn
 } 
+
+output "kms_sm_policy_arn"{
+  value = aws_iam_policy.this.arn
+}

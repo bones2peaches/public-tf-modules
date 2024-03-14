@@ -10,7 +10,7 @@ resource "aws_iam_role_policy_attachment" "ecs_logs_policy_attachment" {
 
 resource "aws_iam_role_policy_attachment" "exec_attachments" {
   count = length(var.exec_policies)
-  depends_on = [ aws_iam_role.exc_role ]
+
 
 
   role       = var.exec_role_name
@@ -21,7 +21,6 @@ resource "aws_iam_role_policy_attachment" "exec_attachments" {
 
 resource "aws_iam_role_policy_attachment" "task_attachments" {
   count = length(var.task_policies)
-  depends_on = [ aws_iam_role.task_role ]
 
 
   role       = var.task_role_name
