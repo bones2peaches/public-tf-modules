@@ -1,5 +1,5 @@
 
-data "aws_iam_policy_document" "this" {
+data "aws_iam_policy_document" "iam" {
 
 
       statement {
@@ -23,5 +23,5 @@ data "aws_iam_policy_document" "this" {
 resource "aws_iam_policy" "this" {
   name = "${var.project}-${var.env}-pull-image-policy"
 
-  policy = data.aws_iam_policy_document.this.json
+  policy = data.aws_iam_policy_document.iam.json
 }
