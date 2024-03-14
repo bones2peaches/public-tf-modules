@@ -14,9 +14,6 @@ variable "db_port" {
   type = number
 }
 
-variable "aws_account_id" {
-  type = string
-}
 
 
 
