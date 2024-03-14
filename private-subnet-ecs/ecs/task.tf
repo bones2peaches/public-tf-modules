@@ -8,6 +8,7 @@ resource "aws_ecs_task_definition" "this" {
 
   task_role_arn      = var.task_role_arn
   execution_role_arn = var.exec_role_arn
+  
 
   container_definitions = jsonencode([
     {

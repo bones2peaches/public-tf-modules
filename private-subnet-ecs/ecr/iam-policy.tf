@@ -13,7 +13,7 @@ data "aws_iam_policy_document" "iam" {
         ]
 
     effect = "Allow"
-    resources = ["${aws_ecr_repository.this.arn}"]
+    resources = ["*"]
   }
 
 
