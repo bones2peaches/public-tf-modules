@@ -20,7 +20,7 @@ resource "aws_iam_policy" "this" {
   
   name        =  "${var.project}-${var.env}-rds-sm-access-policy"
   description = "Policy that allows ECS tasks to access secret and kms for rds"
-  policy = aws_iam_policy.sm_kms.json
+  policy = aws_iam_policy_document.sm_kms.json
 }
 
 
