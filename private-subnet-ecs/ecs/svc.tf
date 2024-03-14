@@ -1,6 +1,6 @@
 
 resource "aws_ecs_service" "this" {
-  depends_on = [ aws_lb_target_group.this,aws_ecs_cluster.this , aws_ecs_task_definition.this , aws_security_group.svc  ]
+  depends_on = [ aws_lb_target_group.this,aws_ecs_cluster.this , aws_ecs_task_definition.this   ]
   name                 = "${var.project}-${var.env}-ecs-service"
   cluster              = aws_ecs_cluster.this.arn
   task_definition      = aws_ecs_task_definition.this.arn

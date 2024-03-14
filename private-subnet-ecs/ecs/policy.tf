@@ -7,7 +7,7 @@ data "aws_iam_policy_document" "logs" {
           "logs:DescribeLogStreams"]
 
         effect = "Allow"
-        resources = "arn:aws:logs:${data.aws_region.current.name}:*:log-group:${aws_cloudwatch_log_group.this.name}:*"
+        resources = ["arn:aws:logs:${data.aws_region.current.name}:*:log-group:${aws_cloudwatch_log_group.this.name}:*"]
     }
 }
 
@@ -17,5 +17,5 @@ resource "aws_iam_policy" "logs" {
   name        = "${var.project}-${var.env}-ecs-cluster-log-policy"
   path        = "/"
   description = "Policy that allows ECS tasks to log to CloudWatch Logs"
-  policy = data.aws_iam_policy.ecs_logs_policy.json
+  policy = data.aws_iam_policy.logs.json
 }
