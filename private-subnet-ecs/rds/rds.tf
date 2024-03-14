@@ -1,4 +1,4 @@
-resource "aws_db_instance" "default" {
+resource "aws_db_instance" "this" {
   allocated_storage             = var.allocated_storage # The minimum storage in GB for PostgreSQL on RDS
   storage_type                  = var.storage_type
   engine                        = var.engine
@@ -22,7 +22,7 @@ resource "aws_db_instance" "default" {
   vpc_security_group_ids = [var.sg_id]
 
 
-  db_subnet_group_name = aws_db_subnet_group.db_sng.name
+  db_subnet_group_name = aws_db_subnet_group.this.name
 
 
 }
