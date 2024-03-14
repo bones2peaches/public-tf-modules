@@ -29,9 +29,7 @@ variable "ecr_name" {
 
 }
 
-variable "aws_account_id" {
 
-}
 
 
 variable "cpu" {
@@ -70,11 +68,6 @@ variable "rds_secret_arn" {
   
 }
 
-variable "allowed_sgs" {
-  type = list(string)
-  
-}
-
 variable "vpc_id" {
   type = string
 }
@@ -83,11 +76,10 @@ variable "container_name" {
   default = "api"
 }
 
-
-variable "subnet_ids" {
-  type = list(string)
+variable "lb_subnet_ids" {
   
 }
+
 variable "domain_name" {
 }
 
@@ -124,13 +116,8 @@ variable "health_check_unhealthy_threshold" {
   default     = 2
 }
 
-variable "service_name" {
 
-}
 
-variable "service_sgs"{
-  type = list(string)
-}
 
 variable "service_subnets" {
   type = list(string)
@@ -140,9 +127,6 @@ variable "zone_id" {
     type = string
 }
 
-variable "tg_name" {
-  type = string
-}
 
 variable "svc_sg_id" {
     type = string

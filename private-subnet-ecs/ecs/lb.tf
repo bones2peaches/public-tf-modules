@@ -4,12 +4,12 @@ resource "aws_lb" "this" {
   load_balancer_type         = "application"
   security_groups            = [var.lb_sg_id]
   enable_deletion_protection = false
-  subnets                    = var.subnet_ids
+  subnets                    = var.lb_subnet_ids
 
 }
 
 resource "aws_lb_target_group" "this" {
-  name        = var.tg_name
+  name        = "${var.project}-${var.env}-api-tg"
   port        = var.health_check_port
   target_type = "ip"
   protocol    = "HTTP"

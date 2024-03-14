@@ -12,7 +12,7 @@ resource "aws_ecs_task_definition" "this" {
   container_definitions = jsonencode([
     {
       name      = "api"
-      image     = "${var.aws_account_id}.dkr.ecr.${data.aws_region.current.name}.amazonaws.com/${var.ecr_name}:${var.image_tag}"
+      image     = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${data.aws_region.current.name}.amazonaws.com/${var.ecr_name}:${var.image_tag}"
       essential = true
       portMappings = [
         {
@@ -33,6 +33,8 @@ resource "aws_ecs_task_definition" "this" {
           "name" : "DB_PORT",
             "value" : "${var.db_port}"
         },
+        {"name" : "STAGE" ,
+        "value" : "${var.env}"}
       ]
       secrets = [
         {
