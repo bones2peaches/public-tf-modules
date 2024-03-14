@@ -90,15 +90,11 @@ variable "health_check_enabled" {
 
 variable "health_check_interval" {
   description = "The approximate amount of time, in seconds, between health checks of an individual target"
+  default = 60
 }
 
 variable "health_check_path" {
   description = "The destination for the health check request"
-}
-
-variable "health_check_port" {
-  description = "The port to use to connect with the target"
-
 }
 
 variable "health_check_timeout" {
