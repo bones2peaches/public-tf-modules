@@ -1,7 +1,7 @@
 
 
 
-data "aws_iam_policy_document" "this" {
+data "aws_iam_policy_document" "sm_kms" {
     depends_on = [ aws_db_instance.this , aws_kms_key.this  ]
     statement {
       actions = [                 "secretsmanager:GetSecretValue",
@@ -20,7 +20,7 @@ resource "aws_iam_policy" "this" {
   
   name        =  "${var.project}-${var.env}-rds-sm-access-policy"
   description = "Policy that allows ECS tasks to access secret and kms for rds"
-  policy = aws_iam_policy.this.json
+  policy = aws_iam_policy.sm_kms.json
 }
 
 

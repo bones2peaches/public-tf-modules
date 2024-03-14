@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "this" {
+data "aws_iam_policy_document" "kms" {
 
   statement {
     principals {
@@ -50,5 +50,5 @@ data "aws_iam_policy_document" "this" {
 
 
 resource "aws_kms_key" "this" {
-  policy = aws_iam_policy_document.this.json
+  policy = aws_iam_policy_document.kms.json
 }
