@@ -17,5 +17,5 @@ resource "aws_iam_policy" "logs" {
   name        = "${var.project}-${var.env}-ecs-cluster-log-policy"
   path        = "/"
   description = "Policy that allows ECS tasks to log to CloudWatch Logs"
-  policy = aws_iam_policy.ecs_logs_policy.json
+  policy = data.aws_iam_policy.ecs_logs_policy.json
 }
