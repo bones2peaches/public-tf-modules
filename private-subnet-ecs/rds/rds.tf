@@ -13,11 +13,6 @@ resource "aws_db_instance" "this" {
   port                          = var.db_port
 
   master_user_secret_kms_key_id = aws_kms_key.this.arn
- 
-  parameter_group_name          = aws_db_parameter_group.this.name
-
-
-
 
   vpc_security_group_ids = [var.sg_id]
 
