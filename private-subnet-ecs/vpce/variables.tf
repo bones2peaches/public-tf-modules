@@ -17,6 +17,7 @@ variable "route_table_ids" {
 variable "region_names" {
   description = "list of regions you want to deploy the vpce."
   type        = list(string)
+  default = ["us-east-1"]
 }
 
 variable "vpc_id" {
@@ -29,8 +30,7 @@ variable "subnet_ids" {
   type = list(string)
 }
 
-variable "allowed_sgs" {
-  description = "list of security groups allowed to access the vpce on port 443"
-  type        = list(string)
+variable "sg_id" {
+  type  = string
 }
 

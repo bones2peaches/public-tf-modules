@@ -137,10 +137,19 @@ variable "service_subnets" {
 }
 
 variable "zone_id" {
+    type = string
 }
 
 variable "tg_name" {
+  type = string
+}
 
+variable "svc_sg_id" {
+    type = string
+}
+
+variable "lb_sg_id" {
+    type = string
 }
 
 

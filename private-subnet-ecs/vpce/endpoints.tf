@@ -8,7 +8,7 @@ resource "aws_vpc_endpoint" "ecr_dkr" {
   depends_on = [ aws_security_group.this ]
   
   security_group_ids = [
-    aws_security_group.this.id
+    var.sg_id
   ]
 
     policy = <<POLICY
@@ -41,7 +41,7 @@ resource "aws_vpc_endpoint" "ecr_api" {
   depends_on = [ aws_security_group.this ]
   
   security_group_ids = [
-    aws_security_group.this.id
+    var.sg_id
   ]
 
     policy = <<POLICY
@@ -73,7 +73,7 @@ resource "aws_vpc_endpoint" "logs" {
   depends_on = [ aws_security_group.this ]
   
   security_group_ids = [
-    aws_security_group.this.id
+    var.sg_id
   ]
 
     policy = <<POLICY
@@ -106,7 +106,7 @@ resource "aws_vpc_endpoint" "kms" {
   depends_on = [ aws_security_group.this ]
   
   security_group_ids = [
-    aws_security_group.this.id
+    var.sg_id
   ]
 
     policy = <<POLICY
@@ -138,7 +138,7 @@ resource "aws_vpc_endpoint" "secretsmanager" {
   depends_on = [ aws_security_group.this ]
   
   security_group_ids = [
-    aws_security_group.this.id
+    var.sg_id
   ]
 
     policy = <<POLICY

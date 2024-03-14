@@ -2,7 +2,7 @@ resource "aws_lb" "this" {
   name                       = "${var.project}-${var.env}-ecs-load-balancer"
   internal                   = false
   load_balancer_type         = "application"
-  security_groups            = [aws_security_group.this.id]
+  security_groups            = [var.lb_sg_id]
   enable_deletion_protection = false
   subnets                    = var.subnet_ids
 

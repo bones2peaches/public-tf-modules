@@ -43,9 +43,9 @@ variable "subnet_ids" {
   type = list(string)
 }
 
-variable "allowed_sgs" {
-  description = "list of security groups allowed to access the vpce on port 443"
-  type        = list(string)
+variable "sg_id" {
+  type = string
+  description = "sg for rds"
 }
 
 variable "allocated_storage" {

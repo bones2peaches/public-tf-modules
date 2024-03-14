@@ -11,7 +11,7 @@ resource "aws_ecs_service" "this" {
 
   network_configuration {
     subnets         = var.service_subnets
-    security_groups = [aws_security_group.svc.id]
+    security_groups = [var.svc_sg_id]
   }
 
   load_balancer {
