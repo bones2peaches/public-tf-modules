@@ -8,7 +8,7 @@ data "aws_iam_policy_document" "kms" {
     condition {
       test = "Bool"
       values = [true]
-      variable = ["kms:GrantIsForAWSResource"]
+      variable = "kms:GrantIsForAWSResource"
     }      
     
     actions   = [ "kms:Create*",
@@ -50,5 +50,5 @@ data "aws_iam_policy_document" "kms" {
 
 
 resource "aws_kms_key" "this" {
-  policy = aws_iam_policy_document.kms.json
+  policy = data.aws_iam_policy_document.kms.json
 }
