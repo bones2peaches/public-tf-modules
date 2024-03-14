@@ -5,7 +5,7 @@ resource "aws_vpc_endpoint" "ecr_dkr" {
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
   subnet_ids          = var.subnet_ids
-  depends_on = [ aws_security_group.this ]
+  depends_on = [ var.sg_id ]
   
   security_group_ids = [
     var.sg_id
@@ -38,7 +38,7 @@ resource "aws_vpc_endpoint" "ecr_api" {
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
   subnet_ids          = var.subnet_ids
-  depends_on = [ aws_security_group.this ]
+  depends_on = [ var.sg_id ]
   
   security_group_ids = [
     var.sg_id
@@ -70,7 +70,7 @@ resource "aws_vpc_endpoint" "logs" {
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
   subnet_ids          = var.subnet_ids
-  depends_on = [ aws_security_group.this ]
+  depends_on = [ var.sg_id ]
   
   security_group_ids = [
     var.sg_id
@@ -103,7 +103,7 @@ resource "aws_vpc_endpoint" "kms" {
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
   subnet_ids          = var.subnet_ids
-  depends_on = [ aws_security_group.this ]
+  depends_on = [ var.sg_id ]
   
   security_group_ids = [
     var.sg_id
@@ -135,7 +135,7 @@ resource "aws_vpc_endpoint" "secretsmanager" {
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
   subnet_ids          = var.subnet_ids
-  depends_on = [ aws_security_group.this ]
+  depends_on = [ var.sg_id ]
   
   security_group_ids = [
     var.sg_id
