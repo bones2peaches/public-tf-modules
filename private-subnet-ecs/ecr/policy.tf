@@ -37,7 +37,7 @@ data "aws_iam_policy_document" "this" {
         "ecr:InitiateLayerUpload",
         "ecr:UploadLayerPart",
         "ecr:CompleteLayerUpload"]
-    resources = ["*"]
+
     effect = "Allow"
   }
 
