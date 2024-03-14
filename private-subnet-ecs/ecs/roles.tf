@@ -19,10 +19,3 @@ resource "aws_iam_role_policy_attachment" "exec_attachments" {
 
 
 
-resource "aws_iam_role_policy_attachment" "task_attachments" {
-  count = length(var.task_policies)
-
-
-  role       = var.task_role_name
-  policy_arn = var.task_policies[count.index]
-}

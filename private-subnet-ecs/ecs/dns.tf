@@ -28,7 +28,7 @@ resource "aws_acm_certificate_validation" "this" {
 # Step 6: Create an A Record
 resource "aws_route53_record" "lb_record" {
   zone_id = var.zone_id
-  name    = var.domain_name
+  name    = "${var.env}.${var.domain_name}"
   type    = "A"
   depends_on = [ aws_lb.this ]
 

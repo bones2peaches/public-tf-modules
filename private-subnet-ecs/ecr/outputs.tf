@@ -13,3 +13,7 @@ output "ecr_url" {
 output "ecr_name" {
   value = aws_ecr_repository.this.name
 }
+
+output "pull_policy_arn"{
+  value = aws_iam_policy.this.arn
+}
