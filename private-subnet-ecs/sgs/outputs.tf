@@ -11,6 +11,6 @@ output "lb_sg_id" {
 }
 
 
-output "lb_svc_id" {
+output "svc_sg_id" {
   value = aws_security_group.svc.id
 }
