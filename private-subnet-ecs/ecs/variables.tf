@@ -76,9 +76,7 @@ variable "container_name" {
   default = "api"
 }
 
-variable "lb_subnet_ids" {
-  
-}
+
 
 variable "domain_name" {
 }
@@ -117,6 +115,10 @@ variable "health_check_unhealthy_threshold" {
 
 variable "service_subnets" {
   type = list(string)
+}
+
+variable "lb_subnet_ids" {
+    type = list(string)
 }
 
 variable "zone_id" {
