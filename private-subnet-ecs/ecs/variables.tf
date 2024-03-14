@@ -152,4 +152,10 @@ variable "lb_sg_id" {
     type = string
 }
 
+variable "task_role_name" {
+  type = string
+}
 
+variable "exec_role_name" {
+  type = string
+}

@@ -39,6 +39,8 @@ data "aws_iam_policy_document" "this" {
                 "kms:Decrypt",
                 "kms:ReEncrypt*",
                 "kms:GenerateDataKey*",
+                "kms:CreateGrant",
+                "kms:ListGrants",
                 "kms:DescribeKey"]
     resources = ["*"]
     effect = "Allow"
